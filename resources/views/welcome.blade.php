@@ -20,15 +20,16 @@
                 </div>
                 <div class="modal-body">
 
-                    <form>
+                    <form action="/" method="POST">
+                        @csrf
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="inputEmail4">Email</label>
-                                <input type="email" class="form-control" id="inputEmail4">
+                                <input name="email" type="email" class="form-control" id="inputEmail4">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputPassword4">Password</label>
-                                <input type="password" class="form-control" id="inputPassword4">
+                                <input name="password" type="password" class="form-control" id="inputPassword4">
                             </div>
                         </div>
 
@@ -49,8 +50,24 @@
 
 </div>
 
+
 <div>
-    @foreach($users as $user)
-    <p>{{$user->email}}</p>
+
+    <div class="accordion">
+        @foreach($users as $user)
+        <div class="card">
+            <h5 class="card-header">User {{$user->id}}</h5>
+            <div class="card-body">
+                <h5 class="card-title">{{$user->name}} {{$user->surname}}</h5>
+                <p class="card-text"> {{$user->email}}</p>
+
+                <p class="card-text"> {{$user->mobile}}</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+        @endforeach
+
+
+    </div>
 </div>
-@endsection
+</ @endsection

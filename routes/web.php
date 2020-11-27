@@ -19,3 +19,13 @@ Route::get('/', function () {
     $users = Userdev::all();
     return view('welcome', ['users' => $users]);
 });
+
+
+
+Route::post('/', function () {
+    $newUser = new Userdev();
+
+    $newUser->email = request('name');
+    $newUser->password = request('password');
+    error_log($newUser);
+});
