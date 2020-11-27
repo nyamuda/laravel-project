@@ -20,21 +20,84 @@
                 </div>
                 <div class="modal-body">
 
-                    <form action="/" method="POST">
-                        @csrf
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="inputEmail4">Email</label>
-                                <input name="email" type="email" class="form-control" id="inputEmail4">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="inputPassword4">Password</label>
-                                <input name="password" type="password" class="form-control" id="inputPassword4">
-                            </div>
-                        </div>
 
-                        <button type="submit" class="btn btn-primary">Sign in</button>
-                    </form>
+                    <div class="container">
+                        <form action="/" method="POST">
+                            @csrf
+                            <h2>Contact Us</h2>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="first">First Name</label>
+                                        <input name="first-name" type="text" class="form-control" placeholder=""
+                                            id="first">
+                                    </div>
+                                </div>
+                                <!--  col-md-6   -->
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="last">Last Name</label>
+                                        <input name="last-name" type="text" class="form-control" placeholder=""
+                                            id="last">
+                                    </div>
+                                </div>
+                                <!--  col-md-6   -->
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="company">Company</label>
+                                        <input type="text" class="form-control" placeholder="" id="company">
+                                    </div>
+
+
+                                </div>
+                                <!--  col-md-6   -->
+
+                                <div class="col-md-6">
+
+                                    <div class="form-group">
+                                        <label for="phone">Phone Number</label>
+                                        <input name="mobile" type="tel" class="form-control" id="phone"
+                                            placeholder="phone">
+                                    </div>
+                                </div>
+                                <!--  col-md-6   -->
+                            </div>
+                            <!--  row   -->
+
+
+                            <div class="row">
+                                <div class="col-md-6">
+
+                                    <div class="form-group">
+                                        <label for="email">Email address</label>
+                                        <input name="email" type="email" class="form-control" id="email"
+                                            placeholder="email">
+                                    </div>
+                                </div>
+                                <!--  col-md-6   -->
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="url">Your Website <small>Please include http://</small></label>
+                                        <input type="url" class="form-control" id="url" placeholder="url">
+                                    </div>
+
+                                </div>
+                                <!--  col-md-6   -->
+                            </div>
+                            <!--  row   -->
+
+
+
+
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
 
 
                 </div>

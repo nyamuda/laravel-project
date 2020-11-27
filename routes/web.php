@@ -26,6 +26,13 @@ Route::post('/', function () {
     $newUser = new Userdev();
 
     $newUser->email = request('name');
-    $newUser->password = request('password');
+    $newUser->name = request('first-name');
+    $newUser->surname = request('last-name');
+    $newUser->mobile = request('mobile');
+
     error_log($newUser);
+
+    $newUser->save();
+
+    return redirect('/');
 });
