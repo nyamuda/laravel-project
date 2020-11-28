@@ -21,6 +21,11 @@ Route::get('/', function () {
 });
 
 
+Route::get('/user/{id}', function ($id) {
+    $user = Userdev::where('id', $id)->get();
+    return view('edituser', ['id' => $user]);
+});
+
 
 Route::post('/', function () {
     $newUser = new Userdev();

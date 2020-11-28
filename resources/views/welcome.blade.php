@@ -49,8 +49,8 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="company">Company</label>
-                                        <input type="text" class="form-control" placeholder="" id="company">
+                                        <label for="company">Username</label>
+                                        <input type="text" class="form-control" placeholder="" id="username">
                                     </div>
 
 
@@ -83,27 +83,20 @@
 
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="url">Your Website <small>Please include http://</small></label>
-                                        <input type="url" class="form-control" id="url" placeholder="url">
+                                        <label for="password">Password</label>
+                                        <input name="password" type="password" class="form-control" id="password"
+                                            placeholder="password">
                                     </div>
 
                                 </div>
                                 <!--  col-md-6   -->
                             </div>
                             <!--  row   -->
-
-
-
-
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
                     </div>
 
 
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>
@@ -115,7 +108,7 @@
 
 
 <div>
-
+    
     <div class="accordion">
         @foreach($users as $user)
         <div class="card">
@@ -125,7 +118,7 @@
                 <p class="card-text"> {{$user->email}}</p>
 
                 <p class="card-text"> {{$user->mobile}}</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <button id=@php echo $user->id @endphp type="button" class="user-btn btn btn-outline-dark">Edit</button>
             </div>
         </div>
         @endforeach

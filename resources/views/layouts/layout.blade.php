@@ -18,6 +18,10 @@
     <!-- Styles -->
     <link rel="stylesheet" href="/css/main.css">
 
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/jquery/main.js"></script>
+
 </head>
 
 <body>
