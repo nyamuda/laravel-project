@@ -1,0 +1,59 @@
+.edit-user-form {
+    width: 90%;
+    position: relative;
+    margin: auto;
+    top: 4rem;
+    margin-bottom: 10rem;
+    background: #0F2027;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #ffffff;
+    padding: 3rem;
+    border-radius: 5px;
+}
+
+#user-list-container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    position: relative;
+    top: 5rem;
+    justify-content: space-evenly;
+    row-gap: 1rem;
+}
+
+.each-user {
+    max-width: 100%;
+    border-right-color: #ffffff;
+}
+
+#add-user-btn {
+    position: relative;
+    top: 3rem;
+    left: 1rem;
+}
+
+#main-view {
+    width: 100%;
+    margin-bottom: 10rem;
+}
+
+@media (min-width:768px) {
+    #user-list-container {
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+        row-gap: 2rem;
+    }
+    .each-user {
+        min-width: 20rem;
+    }
+    .edit-user-form {
+        width: 50%;
+    }
+}
