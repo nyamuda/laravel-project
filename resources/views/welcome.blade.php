@@ -2,7 +2,7 @@
 
 @section('content')
     <div id="main-view">
-        <h1></h1>
+        <h1>A List of Users</h1>
         <div>
 
             <!-- Button trigger modal -->
@@ -15,7 +15,7 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">New User</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -26,13 +26,16 @@
                             <div class="container">
                                 <form action="/" method="POST">
                                     @csrf
-                                    <h2>Contact Us</h2>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="first">First Name</label>
-                                                <input name="first-name" type="text" class="form-control" placeholder="name"
-                                                    id="first">
+                                                <input required name="first-name" type="text" class="form-control"
+                                                    placeholder="name" id="first">
+                                                @error('first-name')
+                                                    <p class="errors">{{ $message }}</p>
+                                                @enderror
+
                                             </div>
                                         </div>
                                         <!--  col-md-6   -->
@@ -40,8 +43,11 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="last">Last Name</label>
-                                                <input name="last-name" type="text" class="form-control"
+                                                <input required name="last-name" type="text" class="form-control"
                                                     placeholder="surname" id="last">
+                                                @error('last-name')
+                                                    <p class="errors">{{ $message }}</p>
+                                                @enderror
                                             </div>
                                         </div>
                                         <!--  col-md-6   -->
@@ -51,9 +57,12 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="company">Username</label>
-                                                <input name="username" type="text" class="form-control"
+                                                <label for="username">Username</label>
+                                                <input required name="username" type="text" class="form-control"
                                                     placeholder="username" id="username">
+                                                @error('username')
+                                                    <p class="errors">{{ $message }}</p>
+                                                @enderror
                                             </div>
 
 
@@ -64,8 +73,11 @@
 
                                             <div class="form-group">
                                                 <label for="phone">Phone Number</label>
-                                                <input name="mobile" type="tel" class="form-control" id="phone"
+                                                <input required name="mobile" type="tel" class="form-control" id="phone"
                                                     placeholder="phone">
+                                                @error('mobile')
+                                                    <p class="errors">{{ $message }}</p>
+                                                @enderror
                                             </div>
                                         </div>
                                         <!--  col-md-6   -->
@@ -78,8 +90,11 @@
 
                                             <div class="form-group">
                                                 <label for="email">Email address</label>
-                                                <input name="email" type="email" class="form-control" id="email"
+                                                <input required name="email" type="email" class="form-control" id="email"
                                                     placeholder="email">
+                                                @error('email')
+                                                    <p class="errors">{{ $message }}</p>
+                                                @enderror
                                             </div>
                                         </div>
                                         <!--  col-md-6   -->
@@ -87,8 +102,14 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="password">Password</label>
-                                                <input name="password" type="password" class="form-control" id="password"
-                                                    placeholder="password">
+                                                <input required name="password" type="password" class="form-control"
+                                                    id="password" placeholder="password">
+                                                @error('password')
+                                                    <p class="errors">@php
+                                                        echo ' the password must have at least 8 characters, with at least one
+                                                        lower case and at least one uppercase letter.'
+                                                        @endphp</p>
+                                                @enderror
                                             </div>
 
                                         </div>
@@ -103,6 +124,9 @@
                                                 <label for="job-title">Job Title</label>
                                                 <input name="job-title" type="text" class="form-control" id="job-title"
                                                     placeholder="job title">
+                                                @error('job-title')
+                                                    <p class="errors">{{ $message }}</p>
+                                                @enderror
                                             </div>
                                         </div>
                                     </div>
@@ -112,12 +136,15 @@
                                                 <label for="bio">Bio</label>
                                                 <textarea name="bio" class="form-control" rows="5" cols="80"
                                                     placeholder="Bio" id="bio"></textarea>
+                                                @error('bio')
+                                                    <p class="errors">{{ $message }}</p>
+                                                @enderror
                                             </div>
                                         </div>
                                     </div>
 
 
-                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <button id="tess" type="submit" class="btn btn-primary">Submit</button>
                                 </form>
                             </div>
 
@@ -152,6 +179,18 @@
 
             </div>
         </div>
+
+
+
+        <!--If the modal form has any errors -->
+        <?php if (count($errors) > 0): ?>
+        <script>
+            $(document).ready(function() {
+                $('#exampleModal').modal('show');
+            });
+
+        </script>
+        <?php endif; ?>
 
     </div>
 </ @endsection

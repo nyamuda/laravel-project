@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('content')
-
+    <h2>Change Information</h2>
     <div class="edit-user-form">
         <form action="/user/{id}" method="POST">
             @csrf
@@ -10,8 +10,9 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="first">First Name</label>
-                        <input name="first-name" type="text" class="form-control" placeholder="name" id="first" value="@php
-                                                                                                echo $id[0]->name @endphp">
+                        <input name="first-name" type="text" class="form-control" placeholder="name" id="first"
+                            value="@php
+                                                                                                                    echo $id[0]->name @endphp">
                     </div>
                 </div>
                 <!--  col-md-6   -->
@@ -21,7 +22,7 @@
                         <label for="last">Last Name</label>
                         <input name="last-name" type="text" class="form-control" placeholder="surname" id="last"
                             value="@php
-                                                                                                echo $id[0]->surname @endphp">
+                                                                                                                    echo $id[0]->surname @endphp">
                     </div>
                 </div>
                 <!--  col-md-6   -->
@@ -32,8 +33,9 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="username">Username</label>
-                        <input name="username" type="text" class="form-control" placeholder="" id="username" value="@php echo
-                                                                                                $id[0]->username @endphp">
+                        <input name="username" type="text" class="form-control" placeholder="" id="username"
+                            value="@php echo
+                                                                                                                    $id[0]->username @endphp">
                     </div>
 
 
@@ -44,8 +46,9 @@
 
                     <div class="form-group">
                         <label for="phone">Phone Number</label>
-                        <input name="mobile" type="tel" class="form-control" id="phone" placeholder="phone" value="@php echo
-                                                                                                $id[0]->mobile @endphp">
+                        <input name="mobile" type="tel" class="form-control" id="phone" placeholder="phone"
+                            value="@php echo
+                                                                                                                    $id[0]->mobile @endphp">
                     </div>
                 </div>
                 <!--  col-md-6   -->
@@ -107,6 +110,4 @@
 
 
 
-
-
-@endsection
+    @endsection
