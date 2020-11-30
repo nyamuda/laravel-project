@@ -107,7 +107,7 @@
                                                 @error('password')
                                                     <p class="errors">@php
                                                         echo ' the password must have at least 8 characters, with at least one
-                                                        lower case and at least one uppercase letter.'
+                                                        lower case, one uppercase letter, one digit, and one special character.'
                                                         @endphp</p>
                                                 @enderror
                                             </div>

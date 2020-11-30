@@ -11,8 +11,11 @@
                     <div class="form-group">
                         <label for="first">First Name</label>
                         <input name="first-name" type="text" class="form-control" placeholder="name" id="first"
-                            value="@php
-                                                                                                                    echo $id[0]->name @endphp">
+                            value="@php echo $id[0]->name @endphp">
+                        @error('first-name')
+                            <p class="errors">{{ $message }}</p>
+                        @enderror
+
                     </div>
                 </div>
                 <!--  col-md-6   -->
@@ -21,8 +24,11 @@
                     <div class="form-group">
                         <label for="last">Last Name</label>
                         <input name="last-name" type="text" class="form-control" placeholder="surname" id="last"
-                            value="@php
-                                                                                                                    echo $id[0]->surname @endphp">
+                            value="@php echo $id[0]->surname @endphp">
+                        @error('last-name')
+                            <p class="errors">{{ $message }}</p>
+                        @enderror
+
                     </div>
                 </div>
                 <!--  col-md-6   -->
@@ -33,9 +39,12 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="username">Username</label>
-                        <input name="username" type="text" class="form-control" placeholder="" id="username"
-                            value="@php echo
-                                                                                                                    $id[0]->username @endphp">
+                        <input required name="username" type="text" class="form-control" placeholder="" id="username"
+                            value="@php echo $id[0]->username @endphp">
+                        @error('username')
+                            <p class="errors">{{ $message }}</p>
+                        @enderror
+
                     </div>
 
 
@@ -46,9 +55,12 @@
 
                     <div class="form-group">
                         <label for="phone">Phone Number</label>
-                        <input name="mobile" type="tel" class="form-control" id="phone" placeholder="phone"
-                            value="@php echo
-                                                                                                                    $id[0]->mobile @endphp">
+                        <input required name="mobile" type="tel" class="form-control" id="phone" placeholder="phone"
+                            value="@php echo $id[0]->mobile @endphp">
+                        @error('mobile')
+                            <p class="errors">{{ $message }}</p>
+                        @enderror
+
                     </div>
                 </div>
                 <!--  col-md-6   -->
@@ -87,6 +99,10 @@
                         <label for="job-title">Job Title</label>
                         <input name="job-title" type="text" class="form-control" id="job-title" placeholder="job title"
                             value="@php echo $id[0]->job_title @endphp">
+                        @error('job-title')
+                            <p class="errors">{{ $message }}</p>
+                        @enderror
+
                     </div>
                 </div>
             </div>
@@ -96,6 +112,10 @@
                         <label for="bio">Bio</label>
                         <textarea name="bio" class="form-control" rows="5" cols="80" placeholder="Bio"
                             id="bio">@php echo $id[0]->bio @endphp</textarea>
+                        @error('bio')
+                            <p class="errors">{{ $message }}</p>
+                        @enderror
+
                     </div>
                 </div>
             </div>
@@ -110,4 +130,4 @@
 
 
 
-    @endsection
+@endsection

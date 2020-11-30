@@ -25,17 +25,17 @@ class UserController extends Controller
         $validatedData = $request->validate([
             'first-name' => 'required',
             'last-name' => 'required',
-            'mobile' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
-            'email' => 'required|email',
-            'username' => 'required',
+            'mobile' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10|unique:users_dev',
+            'email' => 'required|email|unique:users_dev',
+            'username' => 'required|unique:users_dev',
             'password' => [
                 'required',
                 'string',
-                'min:8',             // must be at least 10 characters in length
+                'min:8',             // must be at least 8 characters in length
                 'regex:/[a-z]/',      // must contain at least one lowercase letter
                 'regex:/[A-Z]/',      // must contain at least one uppercase letter
                 'regex:/[0-9]/',      // must contain at least one digit
-                'regex:/[@$!%*#?&]/',
+                'regex:/[@$!%*#?&]/', //must contain at least one special character
             ]
         ]);
 
@@ -58,9 +58,19 @@ class UserController extends Controller
         return redirect('/');
     }
 
-    public function change()
+    public function change(Request $request)
     {
         $userID = request('user-id');
+
+        $validatedEditedData = $request->validate([
+            'first-name' => 'required',
+            'last-name' => 'required',
+            //Forcing a unique rule(for mobile and username) to ignore a given ID (the one l'm trying to update)
+            'mobile' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10|unique:users_dev,mobile,' . $userID,
+            'username' => 'required|unique:users_dev,username,' . $userID,
+        ]);
+
+
 
         $updateUser = Userdev::where('id', $userID)->first();
 
