@@ -17,7 +17,6 @@ class UserController extends Controller
     public function show($id)
     {
         $user = Userdev::where('id', $id)->get();
-        echo $user;
         return view('edituser', ['id' => $user]);
     }
     public function store(Request $request)

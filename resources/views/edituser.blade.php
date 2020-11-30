@@ -1,11 +1,11 @@
 @extends('layouts.layout')
 
 @section('content')
-    <h2>Change Information</h2>
+    <h2 id="form2">Change Information</h2>
     <div class="edit-user-form">
         <form action="/user/{id}" method="POST">
             @csrf
-            <h2>Edit User Info</h2>
+            <h2 id="form-title">Edit User Info</h2>
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
