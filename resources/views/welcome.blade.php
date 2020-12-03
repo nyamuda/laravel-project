@@ -122,7 +122,7 @@
 
                                             <div class="form-group">
                                                 <label for="job-title">Job Title</label>
-                                                <input name="job-title" type="text" class="form-control" id="job-title"
+                                                <input required name="job-title" type="text" class="form-control" id="job-title"
                                                     placeholder="job title">
                                                 @error('job-title')
                                                     <p class="errors">{{ $message }}</p>
@@ -134,7 +134,7 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <label for="bio">Bio</label>
-                                                <textarea name="bio" class="form-control" rows="5" cols="80"
+                                                <textarea required name="bio" class="form-control" rows="5" cols="80"
                                                     placeholder="Bio" id="bio"></textarea>
                                                 @error('bio')
                                                     <p class="errors">{{ $message }}</p>

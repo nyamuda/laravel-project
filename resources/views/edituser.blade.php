@@ -97,8 +97,8 @@
 
                     <div class="form-group">
                         <label for="job-title">Job Title</label>
-                        <input name="job-title" type="text" class="form-control" id="job-title" placeholder="job title"
-                            value="@php echo $id[0]->job_title @endphp">
+                        <input required name="job-title" type="text" class="form-control" id="job-title"
+                            placeholder="job title" value="@php echo $id[0]->job_title @endphp">
                         @error('job-title')
                             <p class="errors">{{ $message }}</p>
                         @enderror
@@ -110,7 +110,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <label for="bio">Bio</label>
-                        <textarea name="bio" class="form-control" rows="5" cols="80" placeholder="Bio"
+                        <textarea required name="bio" class="form-control" rows="5" cols="80" placeholder="Bio"
                             id="bio">@php echo $id[0]->bio @endphp</textarea>
                         @error('bio')
                             <p class="errors">{{ $message }}</p>
